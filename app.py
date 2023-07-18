@@ -1,7 +1,8 @@
 import streamlit as st
 import requests
+//pandas
 import pickle
-import pandas as pd
+
 
 st.title('Movie Recommender System')
 
@@ -42,7 +43,7 @@ selected_movie = st.selectbox(
 
 if st.button('Show Recommendation'):
     recommended_movie_names,recommended_movie_posters = recommend(selected_movie)
-    col1, col2, col3, col4, col5 = st.columns(5)
+    col1, col2, col3, col4, col5 = st.beta_columns(5) //beta_columns
     with col1:
         st.text(recommended_movie_names[0])
         st.image(recommended_movie_posters[0])
